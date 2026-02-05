@@ -15,6 +15,8 @@ namespace MeuCorre.Domain.Entities
 
         public Tag(Guid usuarioId, string nome, string cor)
         {
+            ValidarEntidadeTag(cor);
+
             UsuarioId = usuarioId;
             Nome = nome.ToLower();
             Cor = cor;
@@ -34,4 +36,5 @@ namespace MeuCorre.Domain.Entities
                 throw new Exception("A cor deve estar no formato hexadecimal");
             }
         }
+    }
 }
